@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid no-padding">
+        <div class="container text-center" style="height: 100%;">
+            <div class="centerIt text-center" style="width: 70%;height: 500px;overflow-y:scroll ;">
+                <div style="height: 20px;margin-bottom: 10px;"></div>
+                <span><input style="border: 1px solid black;" type="text" id="firstName" name="firstName"
+                        placeholder="First Name" required>
+                    <input style="border: 1px solid black;" type="text" id="lastName" name="lastName"
+                        placeholder="Last Name" required>
+                        <input style="border: 1px solid black;" type="text" id="backColor" name="backColor"
+                        placeholder="#background color" required>
+                        <select id='textSize'>
+                            <option value="large">Font-size:Large</option>
+                            <option value="medium" selected>Font-size:Medium</option>
+                            <option value="small">Font-size:Small</option>
+                        </select>
+                    <button id="addButton" class="btn btn-outline-primary btn-sm" onclick="add()"><i
+                            class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; Add</button>
+                    <button id="updateButton" class="btn btn-outline-primary btn-sm" onclick="update()"><i
+                            class="fa fa-edit" aria-hidden="true"></i>&nbsp; Update</button>
+                    <button id="cancelButton" style="display: none;" class="btn btn-outline-danger btn-sm"
+                        onclick="cancelUpdate()">Cancel</button>
+
+                </span>
+                <div class="d-flex justify-content-between" >
+                    <span id="selectAllSpan" style="margin-left:10%;display: none;">
+
+                        <input  type="checkbox" id="selectAll" onclick="selectAll()">Select All</span>
+                    <span id="showSelected"  style="margin-right:10% ;display: none;">Total &nbsp;<span id="totalSelected">0</span> Selected Row(s)<button class="btn btn-sm btn-danger" onclick="deleteSelected()" id="deleteSelected">Delete Selected Items</button></span>
+                    
+                </div>
+                <div style="height: 20px;margin-bottom: 10px;"></div>
+                <table id="table" class="text-center" style="width: 100%;">
+
+
+                </table>
+                <span id="modification" style="display: none;"><input style="border: 1px solid black;" type="text" placeholder="#background color" id="newBackColor">
+                    <select id='newTextSize'>
+                        <option value="large">Font-size:Large</option>
+                        <option value="medium" selected>Font-size:Medium</option>
+                        <option value="small">Font-size:Small</option>
+                    </select>
+                    <button class="btn btn-sm btn-success" onclick="modify()" id="modify">Apply</button></span>
+                    <div style="height: 20px;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./table2.js"></script>
+</body>
+
+</html>
