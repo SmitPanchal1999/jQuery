@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>.red {
+        background: red;
+        }</style>
+    <table border="1">
+        <tr><td>Cell-1</td><td>Cell-2</td><td>Cell-3</td></tr>
+        <tr><td>Cell-4</td><td>Cell-5</td><td>Cell-6</td></tr>
+        <tr><td>Cell-7</td><td>Cell-8</td><td>Cell-9</td></tr>
+    </table>
+    <button  id="button1">Click to see the effect</button>
+    <script>
+        //scroll to the top
+        $(document).ready(function () {
+            $("#button1").click(function(){
+               
+                $("td").eq(5).addClass("red");
+                 
+            })
+            })
+
+
+    </script>
+</body>
+
+</html>

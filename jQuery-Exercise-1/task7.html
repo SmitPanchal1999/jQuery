@@ -1,0 +1,64 @@
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body >
+    <style>
+        div {
+        background: #B0E0E6;
+    border: 1px solid #e30ae8;
+    width: 20px;
+    height: 30px;
+    margin: 0 5px;
+    float: left;
+        }
+        .colored {
+    background: #000000;
+  }
+    </style>
+
+    
+<div id="div1"></div>
+<div  id="div2"></div>
+<div  id="div3"></div>
+                <button style="display: inline-block;" id="button1">Click to see the effect</button>   
+           
+
+    <script>
+        //scroll to the top
+        $(document).ready(function () {
+        
+            $("#button1").click(function () {
+                $("#div1").animate({"height":"10px"},1000);
+                if ($("div").is(':animated')){
+                    setTimeout(function(){
+                        $("#div2").animate({"height":"10px"},1000);
+               
+                    },2000);
+                    
+                }
+                
+            })
+            setInterval(function(){
+                
+                $("div:animated").addClass("colored");
+
+
+            
+            },100);
+            
+        })
+
+
+    </script>
+</body>
+
+</html>

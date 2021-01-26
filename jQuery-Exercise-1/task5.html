@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid no-padding text-center">
+        <div class="container text-center">
+            <div class="centerIt text-center" style="width: 40%;">
+                <p>jQuery Exercises</p>
+                <button id="addP">Click to see effect</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+        //scroll to the top
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p:last").after(`<p>with Solution</p>`);
+
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
