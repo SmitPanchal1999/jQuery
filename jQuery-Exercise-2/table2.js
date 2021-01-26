@@ -103,9 +103,10 @@ function deleteRow(index) {
     if (document.getElementById("totalSelected").innerHTML >= 1) {
         console.log("true");
         $("#showSelected").css({ "display": "inline-block" });
+        $("#modification").css({ "display": "inline-block" });
     }
     else {
-
+        $("#modification").hide();
         $("#showSelected").hide();
 
     }
