@@ -1,0 +1,16 @@
+html,body{
+    height: 100%;
+}
+
+#londonH:hover{
+    color: red;
+    cursor: pointer;
+}
+#tokyoH:hover{
+    color:red;
+    cursor: pointer;
+}
+#parisH:hover{
+    color: red;
+    cursor: pointer;
+}

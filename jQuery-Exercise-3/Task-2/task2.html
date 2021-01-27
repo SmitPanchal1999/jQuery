@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+        integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        .white {
+            color: green;
+        }
+    </style>
+    <div class="container-fluid no-padding">
+        <div class="container text-center" style="height: 100%;background-color: thistle;">
+            <div style="display: none;" id="accordion">
+                <h3>London</h3>
+                <div>
+                    <p>London is the capital and largest city of England and the United Kingdom.</p>
+                    <img width="200" height="100" src="../assets/london.jpg">
+                </div>
+                <h3>Paris</h3>
+                <div>
+
+                    <p>Paris (nicknamed the "City of light") is the capital city of France, and the largest city in
+                        France.</p>
+                    <img width="200" height="100" src="../assets/paris.jfif">
+                </div>
+
+                <h3>Tokyo</h3>
+                <div>
+                    <p>Tokyo is Japan's capital and the world's most populous metropolis. It is also one of Japan's 47
+                        prefectures, consisting of 23 central city wards and multiple cities, towns and villages west of
+                        the city center.</p>
+                    <img width="200" height="100" src="../assets/tokyo.jpg">
+                </div>
+            </div>
+            <div id="navbarOne">
+                <div class="d-flex justify-content-center" id="navbar">
+                    <h3 onclick="london()" id="londonH" style="margin-right:20px;">London</h3>
+                    <h3 onclick="paris()" id="parisH" style="margin-right:20px;">Paris</h3>
+                    <h3 onclick="tokyo()" id="tokyoH">Tokyo</h3>
+
+                </div>
+                <div id="london" style="display: none;">
+                    <p>London is the capital and largest city of England and the United Kingdom.</p>
+                    <img src="../assets/london.jpg" width="400" height="300">
+                </div>
+                <div id="paris" style="display: none;">
+
+                    <p>Paris (nicknamed the "City of light") is the capital city of France, and the largest city in
+                        France.</p>
+                    <img src="../assets/paris.jfif" width="400" height="300">
+                </div>
+                <div id="tokyo" style="display: none;">
+                    <p>Tokyo is Japan's capital and the world's most populous metropolis. It is also one of Japan's 47
+                        prefectures, consisting of 23 central city wards and multiple cities, towns and villages west of
+                        the city center.</p>
+                    <img src="../assets/tokyo.jpg" width="400" height="300">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./task2.js"></script>
+</body>
+
+</html>
