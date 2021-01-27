@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>.white{
+        color: green;
+    }
+    
+    </style>
+    <div class="container-fluid no-padding">
+        <div class="container text-center" style="height: 100%;">
+            <div class="carousel">
+                <ul>
+                    <li id="i1"><div class="items"><img  src="../assets/backG.jpg" ></div></li>
+                    <li id="i2"><div class="items"><img src="../assets/img1.jpg"></div></li>
+                    <li id="i3"><div class="items"><img src="../assets/img2.png"></div></li>
+                    <li id="i4"><div class="items"><img src="../assets/img4.jpg"></div></li>
+                    <li id="i5"><div class="items"><img  src="../assets/img5.jpg"></div></li>
+                    <div id="dots" class="d-flex justify-content-space-between">
+                        <span style="margin-right:10px ;" id="c1" onclick="showThisImage(this.id)"><i class="fa fa-circle" aria-hidden="true"> </i></span>
+                        <span style="margin-right:10px ;" id="c2" onclick="showThisImage(this.id)"><i class="fa fa-circle" aria-hidden="true"> </i></span>
+                        <span style="margin-right:10px ;" id="c3" onclick="showThisImage(this.id)"><i class="fa fa-circle" aria-hidden="true"> </i></span>
+                        <span style="margin-right:10px ;" id="c4" onclick="showThisImage(this.id)"><i class="fa fa-circle" aria-hidden="true"> </i></span>
+                        <span id="c5" onclick="showThisImage(this.id)"><i class="fa fa-circle" aria-hidden="true"> </i></span>
+                </div>
+                <span id="left" style="font-size: 30px;font-weight: 1000;" onclick="previous()"><b><i  class="fa fa-angle-left" aria-hidden="true"></i></b></span>
+                <span id="right" style="font-size: 30px;font-weight: 1000;" onclick="next()"><b><i  class="fa fa-angle-right" aria-hidden="true"></i></b></span>
+                </ul>
+             
+            </div>
+
+
+        </div>
+    </div>
+    <script src="./task.js"></script>
+</body>
+
+</html>

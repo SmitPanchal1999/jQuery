@@ -1,0 +1,90 @@
+html,body{
+    height: 100%;
+}
+.container-fluid{
+    height: 100vh;
+}
+ul{
+    position: relative;
+    list-style: none;
+    color: black;
+    list-style-type: none;
+    overflow: hidden;
+    align-items: center;
+    width: 100%;
+    display: inline-block;
+    height: 60vh;
+}
+li{
+    display: none;
+    position: absolute;
+    width: 100%;
+   height: 60vh;
+    color: black;
+    left: 0;
+   
+    
+}
+
+.items{
+    width: 100%;
+    height: 100%;
+    
+}
+img{
+    width:100%;height: 100%;
+   
+}
+#left{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+
+}
+#right{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+}
+#dots{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+#c1:hover{
+    color: gray;
+    cursor: pointer;
+}
+#c2:hover{
+    color: gray;
+    cursor: pointer;
+}
+#c3:hover{
+    color: gray;
+    cursor: pointer;
+}
+#c4:hover{
+    color: gray;
+    cursor: pointer;
+}
+#c5:hover{
+    color: gray;
+    cursor: pointer;
+}
+#left{
+    color: white;
+}
+#right{
+    color: white;    
+}
+#left:hover{
+    cursor: pointer;
+    color: greenyellow;
+}
+#right:hover{
+    cursor: pointer;
+    color: greenyellow;    
+}
