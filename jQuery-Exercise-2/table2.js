@@ -22,7 +22,7 @@ function editRow(index) {
         table.rows[i].cells[4].innerHTML = `<button class='btn btn-danger' disabled=true style="background-color:#ff8080;color:white">Delete</button>`;
     }
     $("#deleteSelected").attr("disabled", true);
-    $("#modify").attr("disabled",true);
+    $("#modify").attr("disabled", true);
 }
 function update() {
 
@@ -61,7 +61,7 @@ function update() {
             table.rows[i].cells[4].innerHTML = `<button class="btn btn-danger" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">Delete</button>`;
         }
         $("#deleteSelected").attr("disabled", false);
-        $("#modify").attr("disabled",false);
+        $("#modify").attr("disabled", false);
     }
 }
 function cancelUpdate() {
@@ -77,14 +77,14 @@ function cancelUpdate() {
         table.rows[i].cells[4].innerHTML = `<button class="btn btn-danger" onclick="deleteRow(this.parentNode.parentNode.rowIndex)">Delete</button>`;
     }
     $("#deleteSelected").attr("disabled", false);
-    $("#modify").attr("disabled",false);
+    $("#modify").attr("disabled", false);
 
 }
 function deleteRow(index) {
     let table = document.getElementById("table");
 
-    
-    
+
+
     document.getElementById("totalSelected").innerHTML = 0;
     document.getElementById("selectAll").checked = false;
     console.log(index);
@@ -92,47 +92,49 @@ function deleteRow(index) {
         console.log(document.getElementById("table").rows.length);
         $(this).remove();
         console.log(document.getElementById("table").rows.length);
-        let rows=document.getElementById("table").rows;
-        checked={}
-        for (let i=0;i<rows.length;i++) {
-            if($(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked"))
-            {
-                checked[i]=1;
+        let rows = document.getElementById("table").rows;
+        checked = {}
+        for (let i = 0; i < rows.length; i++) {
+            if ($(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked")) {
+                checked[i] = 1;
             }
-   
-    
+
+
         }
-        if (document.getElementById("table").rows.length==Number(Object.keys(checked).length)){
-            document.getElementById("selectAll").checked=true;
+        if (document.getElementById("table").rows.length == Number(Object.keys(checked).length)) {
+            document.getElementById("selectAll").checked = true;
         }
-        else{
-            document.getElementById("selectAll").checked=false;
-            
+        else {
+            document.getElementById("selectAll").checked = false;
+
         }
         console.log(checked);
+        names.splice(index, 1);
+        console.log(names, checked, table.rows.length);
+        document.getElementById("totalSelected").innerHTML = Number(Object.keys(checked).length);
+        if (document.getElementById("totalSelected").innerHTML >= 1) {
+            console.log("true");
+            $("#showSelected").css({ "display": "inline-block" });
+            $("#modification").css({ "display": "inline-block" });
+        }
+        else {
+
+            $("#modification").hide();
+            $("#showSelected").hide();
+
+        }
+        if (table.rows.length >= 1) {
+            $("#selectAllSpan").css({ "display ": "inline-block" });
+        }
+        else {
+            $("#selectAllSpan").hide();
+        }
+
 
     });
-    //table.deleteRow(index);
-    names.splice(index, 1);
-    console.log(names);
-    document.getElementById("totalSelected").innerHTML = Number(Object.keys(checked).length);
-    if (document.getElementById("totalSelected").innerHTML >= 1) {
-        console.log("true");
-        $("#showSelected").css({ "display": "inline-block" });
-        $("#modification").css({ "display": "inline-block" });
-    }
-    else {
-        $("#modify").hide();
-        $("#modification").hide();
 
-    }
-    if (table.rows.length >= 1) {
-        $("#selectAllSpan").css({ "display ": "inline-block" });
-    }
-    else {
-        $("#selectAllSpan").hide();
-    }
-    
+    //table.deleteRow(index);
+
 }
 function add() {
     const table = document.getElementById("table");
@@ -211,12 +213,12 @@ function add() {
     if (table.rows.length >= 1) {
         document.getElementById("selectAllSpan").style.display = "inline-block";
     }
-    if (document.getElementById("table").rows.length==Number(Object.keys(checked).length)){
-        document.getElementById("selectAll").checked=true;
+    if (document.getElementById("table").rows.length == Number(Object.keys(checked).length)) {
+        document.getElementById("selectAll").checked = true;
     }
-    else{
-        document.getElementById("selectAll").checked=false;
-        
+    else {
+        document.getElementById("selectAll").checked = false;
+
     }
 
 }
@@ -229,7 +231,7 @@ function selectAll() {
         for (let i = 0; i < rows.length; i++) {
 
             console.log($(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked"));
-            $(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked",true);
+            $(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked", true);
             // rows[i].cells[0].innerHTML = `<input type="checkbox" onclick="checkedItems(this.parentNode.parentNode.rowIndex)" checked/>`
             if (checked[i] == undefined) {
                 checked[i] = 1
@@ -241,8 +243,8 @@ function selectAll() {
     } else {
         for (let i = 0; i < rows.length; i++) {
             console.log($(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked"));
-            $(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked",false);
-            
+            $(`#table tr:eq(${i}) td:eq(0)`).children().prop("checked", false);
+
             //rows[i].cells[0].innerHTML = `<input type="checkbox" onclick="checkedItems(this.parentNode.parentNode.rowIndex)"/>`
 
 
@@ -274,16 +276,16 @@ function selectAll() {
 }
 
 function checkedItems(index) {
-    
+
     if ($(`#table tr:eq(${index}) td:eq(0)`).children().prop("checked")) {
-        
-        
+
+
         checked[index] = 1;
-        
+
     }
-    else{
-        
-        
+    else {
+
+
         delete checked[index];
     }
     console.log(checked);
@@ -304,12 +306,12 @@ function checkedItems(index) {
     else {
         $("#selectAllSpan").hide();
     }
-    if (document.getElementById("table").rows.length==Number(Object.keys(checked).length)){
-        document.getElementById("selectAll").checked=true;
+    if (document.getElementById("table").rows.length == Number(Object.keys(checked).length)) {
+        document.getElementById("selectAll").checked = true;
     }
-    else{
-        document.getElementById("selectAll").checked=false;
-        
+    else {
+        document.getElementById("selectAll").checked = false;
+
     }
 }
 function deleteSelected() {
@@ -328,35 +330,38 @@ function deleteSelected() {
             //   table.deleteRow(item);
             $("#table tr").eq(item).fadeOut("slow", function () {
                 $(this).remove();
-            });
-            names.splice(item, 1);
-        })
-    }
-    
+                names.splice(item, 1);
+                console.log(names, checked, table.rows.length);
+                document.getElementById("totalSelected").innerHTML = Number(Object.keys(checked).length);
+                if (document.getElementById("totalSelected").innerHTML >= 1) {
+                    console.log("true");
+                    $("#showSelected").css({ "display": "inline-block" });
+                    $("#modification").css({ "display": "inline-block" });
+                }
+                else {
+                    console.log("true");
+                    $("#showSelected").hide();
+                    $("#modification").hide();
+                }
+                if (table.rows.length >= 1) {
+                    $("#selectAllSpan").css({ "display ": "inline-block" });
+                }
+                else {
+                    $("#selectAllSpan").hide();
+                }
+                if (document.getElementById("table").rows.length == Number(Object.keys(checked).length)) {
+                    document.getElementById("selectAll").checked = true;
+                }
+                else {
+                    document.getElementById("selectAll").checked = false;
 
-    document.getElementById("totalSelected").innerHTML = Number(Object.keys(checked).length);
-    if (document.getElementById("totalSelected").innerHTML >= 1) {
-        console.log("true");
-        $("#showSelected").css({ "display": "inline-block" });
-        $("#modification").css({ "display": "inline-block" });
-    }
-    else {
-        console.log("true");
-        $("#showSelected").hide();
-        $("#modification").hide();
-    }
-    if (table.rows.length >= 1) {
-        $("#selectAllSpan").css({ "display ": "inline-block" });
-    }
-    else {
-        $("#selectAllSpan").hide();
-    }
-    if (document.getElementById("table").rows.length==Number(Object.keys(checked).length)){
-        document.getElementById("selectAll").checked=true;
-    }
-    else{
-        document.getElementById("selectAll").checked=false;
-        
+                }
+            });
+
+        })
+
+
+
     }
 }
 
@@ -384,13 +389,13 @@ function modify() {
             storeChecked.forEach((item) => {
                 table.rows[item].cells[0].innerHTML = `<input type="checkbox" onclick="checkedItems(this.parentNode.parentNode.rowIndex)"/>`
                 //   table.deleteRow(item);
-                table.rows[item].cells[1].style.backgroundColor=backColor.value;
-                table.rows[item].cells[2].style.backgroundColor=backColor.value;
-                table.rows[item].cells[1].style.fontSize=textSize.value;
-                table.rows[item].cells[2].style.fontSize=textSize.value;
-                
-                names[item].backColor=backColor.value;
-                names[item].textSize="" + textSize.selectedIndex;
+                table.rows[item].cells[1].style.backgroundColor = backColor.value;
+                table.rows[item].cells[2].style.backgroundColor = backColor.value;
+                table.rows[item].cells[1].style.fontSize = textSize.value;
+                table.rows[item].cells[2].style.fontSize = textSize.value;
+
+                names[item].backColor = backColor.value;
+                names[item].textSize = "" + textSize.selectedIndex;
             })
         }
         document.getElementById("selectAll").checked = false;
